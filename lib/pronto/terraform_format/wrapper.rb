@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'open3'
 require_relative 'output_parser'
 
@@ -10,11 +12,11 @@ module Pronto
 
       def run(file_path)
         stdout, stderr, = Open3.capture3("#{@terraform_path} "\
-                                         "fmt "\
-                                         "-write=false "\
-                                         "-list=false "\
-                                         "-diff=true "\
-                                         "-check=false "\
+                                         'fmt '\
+                                         '-write=false '\
+                                         '-list=false '\
+                                         '-diff=true '\
+                                         '-check=false '\
                                          "#{file_path}")
         if stderr && !stderr.empty?
           puts "WARN: pronto-terraform_format: #{file_path}: #{stderr}"

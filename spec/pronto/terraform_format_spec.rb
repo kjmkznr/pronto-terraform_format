@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Pronto::TerraformFormatRunner do
@@ -9,7 +11,7 @@ describe Pronto::TerraformFormatRunner do
   end
 
   describe '#run' do
-      subject { terraform_format.run }
+    subject { terraform_format.run }
 
       context 'patches are nil' do
         it { should == [] }
